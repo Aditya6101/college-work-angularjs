@@ -1,0 +1,18 @@
+:root {
+  --gray-clr: #333;
+  --white: #fff;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--gray-clr);
+}
+
+.app {
+  width: 650px;
+  padding: 2em;
+  background-color: var(--white);
+  border-radius: 7px;
+}
