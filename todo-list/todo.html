@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular JS Todo</title>
+
+    <style>
+      .complete {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body ng-app="app" ng-controller="todoController">
+    <h1>Todo list</h1>
+
+    <form ng-submit="addNewTodo()">
+      <input type="text" ng-model="todoInput" placeholder="add todo" />
+      <button type="submit">Add</button>
+    </form>
+
+    <ul>
+      <li ng-repeat="t in todos">
+        <span ng-class="{complete: t.isCompleted}">{{t.text}}</span>
+        <button ng-click="handleToggleComplete(t.id)">✔</button>
+        <button ng-click="handleDeleteTodo(t.id)">✖</button>
+      </li>
+    </ul>
+
+    <!-- angularjs script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <!-- app.js -->
+    <script src="./app.js"></script>
+  </body>
+</html>
